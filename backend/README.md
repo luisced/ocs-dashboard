@@ -8,7 +8,7 @@ routes.
 1. **Generate Application Key**
 
    ```bash
-
+   docker compose exec app php artisan key:generate
    ```
 2. **Run Migrations**
 
