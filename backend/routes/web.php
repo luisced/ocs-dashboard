@@ -9,4 +9,5 @@ Route::get('/', function () {
 });
 
 
+
 Route::get('/health', [HealthCheckController::class, 'check']);
