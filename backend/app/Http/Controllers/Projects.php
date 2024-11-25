@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\SocialNetwork;
 use App\Http\Controllers\Types;
 use App\Http\Controllers\Contacts;
+use App\Models\Type;
 
 class Projects extends Controller
 {
@@ -20,31 +21,41 @@ class Projects extends Controller
     public function store(Request $request)
     {
         $typesController = new Types();
-        $typesController->store($request);
+        $typeResponse = $typesController->store($request);
+        $typeData = $typeResponse->getData();
+        $typeId = $typeData->id;
 
         $socialNetworkController = new SocialNetwork();
-        $socialNetworkController->store($request);
+        $socialNetworkResponse = $socialNetworkController->store($request);
+        $socialNetworkData = $socialNetworkResponse->getData();
+        $socialNetworkId = $socialNetworkData->id;
 
         $contactsController = new Contacts();
-        $contactsController->store($request);
+        $contactResponse = $contactsController->store($request);
+        $contactData = $contactResponse->getData();
+        $contactId = $contactData->id;
+
+
 
         $validated = $request->validate([
             'Email' => 'required|email|max:70',
             'Name' => 'required|string|max:100',
-            'Id_Contact' => 'required|integer|exists:Contacts,Id',
             'Description' => 'required|string|max:200',
             'Objective' => 'required|string|max:200',
-            'ID_Type' => 'required|integer|exists:Types,ID_Type',
             'Photo' => 'required|string',
             'URL' => 'required|string|max:150',
-            'Id_Social_Network' => 'required|integer|exists:Social_Network,Id',
             'Phone_Number' => 'nullable|string|max:15',
             'Address' => 'nullable|string|max:150',
             'Status' => 'required|boolean',
             'dTimeStamp' => 'required|date',
         ]);
 
+        $validated['Id_Contact'] = $contactId;
+        $validated['ID_Type'] = $typeId;
+        $validated['Id_Social_Network'] = $socialNetworkId;
+
         $project = Project::create($validated);
+
 
         return response()->json($project, 201);
     }

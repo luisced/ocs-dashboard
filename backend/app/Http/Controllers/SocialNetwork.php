@@ -14,7 +14,6 @@ class SocialNetwork extends Controller
             "Social_Network" => "required|string|max:30"
         ]);
         $socialN = ModelsSocialNetwork::create($validated);
-
-        return response()->json($socialN, 200);
+        return response()->json(["id" => $socialN->id, "data" => $socialN], 200);
     }
 }
