@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Http\Controllers\SocialNetwork;
+use App\Http\Controllers\Types;
+use App\Http\Controllers\Contacts;
 
 class Projects extends Controller
 {
@@ -16,6 +19,15 @@ class Projects extends Controller
     // Create a new project
     public function store(Request $request)
     {
+        $typesController = new Types();
+        $typesController->store($request);
+
+        $socialNetworkController = new SocialNetwork();
+        $socialNetworkController->store($request);
+
+        $contactsController = new Contacts();
+        $contactsController->store($request);
+
         $validated = $request->validate([
             'Email' => 'required|email|max:70',
             'Name' => 'required|string|max:100',
