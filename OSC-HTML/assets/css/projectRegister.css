@@ -1,0 +1,39 @@
+body {
+    background-color: #EDF9EA;
+}
+
+.container {
+    background-color: #fff;
+}
+
+.input-container {
+    padding: 6rem;
+}
+
+.form-group label {
+    display: block; /* Asegura que el label se muestre como un bloque */
+    margin-bottom: 0.5rem; /* Espacio entre label y input */
+}
+
+.label { font-weight: semibold; }
+
+.form-control {
+    margin-bottom: 3rem;
+    height: 3rem;
+    background-color: #E6E6E6;
+    border: #E6E6E6 solid 3px;
+}
+
+input::placeholder { 
+    color: #d6d6d6;
+    font-style: italic;
+ }
+
+.two-inputs-container {
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.two-inputs-container .form-group {
+    flex: 1;
+}

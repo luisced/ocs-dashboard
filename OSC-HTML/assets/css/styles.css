@@ -1,0 +1,144 @@
+body {
+    background-color: #F9F7EA;
+    font-family: Barlow Semi Condensed;
+  }
+
+.inicio {
+    background-color: #2F855A;
+}
+
+.title {
+    color: #F9F7EA;
+    padding: 12rem 5rem 4rem 5rem;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.title-proyectos {
+  font-size: 3rem;
+  margin: 5rem;
+}
+
+.categoria-title {
+  font-size: 2rem;
+  padding: 2rem 0;
+  color: #2F855A;
+  text-transform: uppercase;
+}
+
+.cards-container {
+    flex-direction: row;
+    gap: 2.5rem; 
+    overflow-x: auto;
+    padding: 1rem;
+    margin: 2rem 4rem 8rem;
+}
+
+.card {
+    position: relative; 
+    height: 20rem; 
+    width: 30rem; 
+    border-radius: 2rem; 
+    overflow: hidden; 
+    flex-direction: column;
+    flex-shrink: 0; 
+    cursor: pointer;
+    transition: height 0.3s ease, width 0.3s ease;
+}
+
+.card:hover {
+  height: 22rem;
+  width: 32rem;
+}
+  
+.bg-card {
+    background-color: #fff;
+    flex: 1;
+    position: relative; 
+    z-index: 1; 
+}
+  
+.img-card {
+    background-image: url(../img/perro.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 60%; 
+    width: 100%; 
+    position: absolute; 
+    border-radius: 2rem 2rem 0 0;
+    top: 0; 
+    z-index: 2; 
+}
+  
+  .text-container {
+    flex: 1; /* Ocupa el espacio restante */
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+    z-index: 3; /* Encima de .bg-card y .img-card */
+    color: #333; /* Contraste del texto */
+    }
+  
+  .nombre-proyecto {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .desc-proyecto {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* ----------- MODALS ------------- */
+  .custom-modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 80rem;
+    width: 90%;
+    text-align: center;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+.modal-title {
+    padding: 2rem;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.modal-info {
+    color: #9A9A9A;
+    text-align: start;
+    padding: 2rem 5rem;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+.objetivo-container {
+    background-color: #EAF1F9;
+    max-width: 70%;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 1.5rem;
+    color: #91A3BB;
+}
+.desc-container {
+    color: #91A3BB;
+    margin: 4rem auto;
+}

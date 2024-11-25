@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Gallery</title>
+</head>
+<body>
+    <section class="inicio" id="inicio">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="title">Proyectos OSC</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barra de búsqueda -->
+     <p class="title-proyectos">Proyectos</p>
+
+    <!-- Categoría  -->
+    <section class="categoria">
+        <div class="container categoria-title">Ejemplo de categoria</div>
+            <div class="d-flex cards-container">
+            <div class="d-flex card" onclick="openModal('modal1')">
+                <div class="bg-card"></div>
+                <div class="img-card"></div>
+                <div class="d-flex text-container">
+                    <div class="nombre-proyecto">Asilo primavera[nombreProyecto]</div>
+                    <div class="desc-proyecto">Descripción: </div>
+                </div>
+            </div>
+            <div class="d-flex card">
+                <div class="bg-card"></div>
+                <div class="img-card"></div>
+                <div class="d-flex text-container">
+                    <div class="nombre-proyecto">Título</div>
+                    <div class="desc-proyecto">Descripción: </div>
+                </div>
+            </div>
+            <div class="d-flex card">
+                <div class="bg-card"></div>
+                <div class="img-card"></div>
+                <div class="d-flex text-container">
+                    <div class="nombre-proyecto">Título</div>
+                    <div class="desc-proyecto">Descripción: </div>
+                </div>
+            </div>
+            <div class="d-flex card">
+                <div class="bg-card"></div>
+                <div class="img-card"></div>
+                <div class="d-flex text-container">
+                    <div class="nombre-proyecto">Título</div>
+                    <div class="desc-proyecto">Descripción: </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="categoria">
+        <div class="container categoria-title">Ejemplo de categoria</div>
+            <div class="d-flex cards-container">
+            <div class="d-flex card" onclick="openModal('modal1')">
+                <div class="bg-card"></div>
+                <div class="img-card"></div>
+                <div class="d-flex text-container">
+                    <div class="nombre-proyecto">Asilo primavera[nombreProyecto]</div>
+                    <div class="desc-proyecto">Descripción: </div>
+                </div>
+            </div>
+            <div class="d-flex card">
+                <div class="bg-card"></div>
+                <div class="img-card"></div>
+                <div class="d-flex text-container">
+                    <div class="nombre-proyecto">Título</div>
+                    <div class="desc-proyecto">Descripción: </div>
+                </div>
+            </div>
+            <div class="d-flex card">
+                <div class="bg-card"></div>
+                <div class="img-card"></div>
+                <div class="d-flex text-container">
+                    <div class="nombre-proyecto">Título</div>
+                    <div class="desc-proyecto">Descripción: </div>
+                </div>
+            </div>
+            <div class="d-flex card">
+                <div class="bg-card"></div>
+                <div class="img-card"></div>
+                <div class="d-flex text-container">
+                    <div class="nombre-proyecto">Título</div>
+                    <div class="desc-proyecto">Descripción: </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="modal1" class="custom-modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal1')">
+                <i class="bi bi-x-circle"></i>
+                &times;
+            </span>
+            <div class="info-container">
+                <h2 class="modal-title">[nombreProyecto]</h2>
+                <div class="modal-info">
+                    <p>Choapan No. 29 Col. Hipódromo, Alcaldía Cuauhtémoc. C.P. 06100  Ciudad de México</p>
+                    <p>admin@asiloprimavera.com</p>
+                    <p>55 4433 2211</p>
+                    <p>https://www.asiloprimavera.org/</p>
+                </div>
+                <div class="objetivo-container">
+                    <h3>Objetivo</h3>
+                    <p>Intervenir en la formación de niños varones de 6 a 13 años de edad, de escasos recursos, huérfanos parcial, total o con otro tipo de desamparo.</p>
+                </div>
+                <div class="desc-container">
+                    <h3>Descripción</h3>
+                    <p>Aplicamos 4 grandes programas que nos permiten realizar con éxito nuestra labor durante los últimos 100 años.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = "flex"; // Muestra el modal
+    }
+
+    function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = "none"; // Oculta el modal
+    }
+</script>
+</html>
