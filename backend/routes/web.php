@@ -9,6 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/health', [HealthCheckController::class, 'check']);
 
 // Projects CRUD routes
