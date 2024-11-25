@@ -20,6 +20,6 @@ class Contacts extends Controller
         ]);
         $contact = Contact::create($validated);
 
-        return response()->json($contact, 200);
+        return response()->json(["id" => $contact->id, "data" => $contact], 200);
     }
 }

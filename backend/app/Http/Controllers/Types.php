@@ -13,7 +13,6 @@ class Types extends Controller
             "Type_Name" => "required|string|max:50",
         ]);
         $type = Type::create($validated);
-
-        return response()->json($type, 200);
+        return response()->json(["id" => $type->id, "data" => $type], 200);
     }
 }
