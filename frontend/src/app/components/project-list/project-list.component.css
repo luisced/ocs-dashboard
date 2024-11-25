@@ -1,0 +1,75 @@
+body {
+    background-color: #F9F7EA;
+    font-family: Barlow Semi Condensed;
+}
+
+.inicio {
+    background-color: #2F855A;
+}
+
+.title {
+    color: #F9F7EA;
+    padding: 12rem 5rem 4rem 5rem;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.title-proyectos {
+    font-size: 3rem;
+    margin: 5rem;
+  }
+  
+
+.card {
+    position: relative; 
+    border-radius: 1.5rem; 
+    overflow: hidden; 
+    flex-direction: column;
+    flex-shrink: 0; 
+    cursor: pointer;
+    transition: height 0.3s ease, width 0.3s ease;
+}
+
+.card-header {
+    height: 50%;
+    background-color: #7eb892;
+}
+
+.btn-primary {
+    background-color: #f3f3f3;
+    border: #3182CE solid 1px;
+    color: #3182CE;
+}
+
+.btn-primary:hover {
+    background-color: #3182CE;
+    color: white;
+}
+
+/*-------- MODAL ----------*/
+
+.modal-content {
+    border-radius: 1rem;
+    width: 90%;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.modal-info {
+    color: #666666;
+    text-align: start;
+    padding: 2rem 5rem;
+}
+
+.objetivo-container {
+    background-color: #EAF1F9;
+    max-width: 70%;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 1.5rem;
+    color: #91A3BB;
+}
+.desc-container {
+    color: #91A3BB;
+    margin: 4rem auto;
+}

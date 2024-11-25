@@ -17,6 +17,7 @@ body {
 .title-proyectos {
   font-size: 3rem;
   margin: 5rem;
+  font-weight: bold;
 }
 
 .categoria-title {

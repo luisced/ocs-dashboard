@@ -1,8 +1,25 @@
-<div class="container mt-5">
+<body>
+  <section class="inicio" id="inicio">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="title">Proyectos OSC</h1>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+  <section class="about">
+    <p>Somos una empresa que busca </p>
+  </section>
+  <p class="title-proyectos">Proyectos</p>
+
+  <div class="container mt-5">
     <div class="row">
       <div class="col-md-4 mb-4" *ngFor="let project of projects">
         <div class="card h-100 shadow-sm">
-          <div class="card-header text-center bg-primary text-white">
+          <div class="card-header text-center text-white">
             <h5 class="card-title">{{ project.Name }}</h5>
           </div>
           <div class="card-body">
@@ -43,12 +60,16 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
-            <p><strong>Description:</strong> {{ selectedProject?.Description }}</p>
-            <p><strong>Email:</strong> {{ selectedProject?.Email }}</p>
-            <p><strong>Objective:</strong> {{ selectedProject?.Objective }}</p>
-            <p><strong>Phone:</strong> {{ selectedProject?.Phone_Number }}</p>
+          <div class="modal-info">
             <p><strong>Address:</strong> {{ selectedProject?.Address }}</p>
+            <p><strong>Email:</strong> {{ selectedProject?.Email }}</p>
+            <p><strong>Phone:</strong> {{ selectedProject?.Phone_Number }}</p>
+          </div>
+          <div class="objetivo-container">
+            <p><strong>Objective:</strong> {{ selectedProject?.Objective }}</p>
+          </div>
+          <div class="desc-container">
+            <p><strong>Description:</strong> {{ selectedProject?.Description }}</p>
           </div>
           <div class="modal-footer">
             <button
@@ -63,3 +84,5 @@
       </div>
     </div>
   </div>
+
+</body>
