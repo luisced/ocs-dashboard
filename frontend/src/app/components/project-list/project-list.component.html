@@ -43,6 +43,10 @@
         <label for="projectObjective" class="form-label">Objective</label>
         <input type="text" class="form-control" id="projectObjective" [(ngModel)]="newProject.Objective" name="objective">
       </div>
+      <div class="col-md-6">
+        <label for="socialNetworkURL" class="form-label">Social Network URL</label>
+        <input type="url" class="form-control" id="socialNetworkURL" [(ngModel)]="newProject.Social_Network_URL" name="socialNetworkURL">
+      </div>
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Add Project</button>
       </div>
@@ -59,6 +63,9 @@
           <div class="card-body">
             <p class="card-text">
               <strong>Description:</strong> {{ project.Description }}
+            </p>
+            <p class="card-text">
+              <strong>Social Network:</strong> <a href="{{ project.Social_Network_URL }}" target="_blank">{{ project.Social_Network_URL }}</a>
             </p>
           </div>
           <div class="card-footer text-center">
@@ -98,6 +105,7 @@
             <p><strong>Address:</strong> {{ selectedProject?.Address }}</p>
             <p><strong>Email:</strong> {{ selectedProject?.Email }}</p>
             <p><strong>Phone:</strong> {{ selectedProject?.Phone_Number }}</p>
+            <p><strong>Social Network:</strong> <a href="{{ selectedProject?.Social_Network_URL }}" target="_blank">{{ selectedProject?.Social_Network_URL }}</a></p>
           </div>
           <div class="objetivo-container">
             <p><strong>Objective:</strong> {{ selectedProject?.Objective }}</p>
