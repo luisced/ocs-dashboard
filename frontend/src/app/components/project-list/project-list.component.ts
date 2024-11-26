@@ -25,10 +25,17 @@ export class ProjectListComponent implements OnInit {
   constructor(private projectService: ProjectService) {}
 
   ngOnInit(): void {
-    // Fetch projects from the service
-    this.projectService.getProjects().subscribe(data => {
-      this.projects = data;
-    });
+    // Load projects from localStorage
+    const storedProjects = localStorage.getItem('projects');
+    if (storedProjects) {
+      this.projects = JSON.parse(storedProjects);
+    } else {
+      // Fetch projects from the service if not in localStorage
+      this.projectService.getProjects().subscribe(data => {
+        this.projects = data;
+        localStorage.setItem('projects', JSON.stringify(this.projects));
+      });
+    }
   }
 
   openModal(project: any): void {
@@ -40,6 +47,7 @@ export class ProjectListComponent implements OnInit {
     // Add the new project to the list
     if (this.newProject.Name && this.newProject.Description) {
       this.projects.push({ ...this.newProject });
+      localStorage.setItem('projects', JSON.stringify(this.projects)); // Save to localStorage
       this.newProject = {
         Name: '',
         Description: '',
