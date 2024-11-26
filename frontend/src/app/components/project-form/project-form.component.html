@@ -1,54 +1,131 @@
 <div class="container mt-5">
     <!-- Login Form -->
-    <form *ngIf="!isLoggedIn" (ngSubmit)="login()" class="row g-3">
-      <div class="col-md-6">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username" [(ngModel)]="credentials.username" name="username" required>
+    <div class="card shadow-lg p-4 mb-5" *ngIf="!isLoggedIn">
+      <div class="card-body">
+        <h3 class="card-title text-center mb-4">Login</h3>
+        <form (ngSubmit)="login()" class="row g-3">
+          <div class="col-md-12">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              [(ngModel)]="credentials.username"
+              name="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+          <div class="col-md-12">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              [(ngModel)]="credentials.password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </div>
+          <div class="col-12 text-center" *ngIf="loginError">
+            <p class="text-danger mt-2">Invalid username or password</p>
+          </div>
+        </form>
       </div>
-      <div class="col-md-6">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" [(ngModel)]="credentials.password" name="password" required>
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Login</button>
-      </div>
-      <div class="col-12" *ngIf="loginError">
-        <p class="text-danger">Invalid username or password</p>
-      </div>
-    </form>
+    </div>
 
     <!-- Project Form -->
-    <form *ngIf="isLoggedIn" (ngSubmit)="addProject()" class="row g-3">
-      <div class="col-md-6">
-        <label for="projectName" class="form-label">Project Name</label>
-        <input type="text" class="form-control" id="projectName" [(ngModel)]="newProject.Name" name="name" required>
+    <div class="card shadow-lg p-4" *ngIf="isLoggedIn">
+      <div class="card-body">
+        <h3 class="card-title text-center mb-4">Add New Project</h3>
+        <form (ngSubmit)="addProject()" class="row g-3">
+          <div class="col-md-6">
+            <label for="projectName" class="form-label">Project Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="projectName"
+              [(ngModel)]="newProject.Name"
+              name="name"
+              placeholder="Enter project name"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="projectDescription" class="form-label">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="projectDescription"
+              [(ngModel)]="newProject.Description"
+              name="description"
+              placeholder="Enter project description"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="projectAddress" class="form-label">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="projectAddress"
+              [(ngModel)]="newProject.Address"
+              name="address"
+              placeholder="Enter project address"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="projectEmail" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="projectEmail"
+              [(ngModel)]="newProject.Email"
+              name="email"
+              placeholder="Enter project email"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="projectPhone" class="form-label">Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="projectPhone"
+              [(ngModel)]="newProject.Phone_Number"
+              name="phone"
+              placeholder="Enter project phone number"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="projectObjective" class="form-label">Objective</label>
+            <input
+              type="text"
+              class="form-control"
+              id="projectObjective"
+              [(ngModel)]="newProject.Objective"
+              name="objective"
+              placeholder="Enter project objective"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="socialNetworkURL" class="form-label">Social Network URL</label>
+            <input
+              type="url"
+              class="form-control"
+              id="socialNetworkURL"
+              [(ngModel)]="newProject.Social_Network_URL"
+              name="socialNetworkURL"
+              placeholder="Enter social network URL"
+            />
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-success w-100">Add Project</button>
+          </div>
+        </form>
       </div>
-      <div class="col-md-6">
-        <label for="projectDescription" class="form-label">Description</label>
-        <input type="text" class="form-control" id="projectDescription" [(ngModel)]="newProject.Description" name="description" required>
-      </div>
-      <div class="col-md-6">
-        <label for="projectAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="projectAddress" [(ngModel)]="newProject.Address" name="address">
-      </div>
-      <div class="col-md-6">
-        <label for="projectEmail" class="form-label">Email</label>
-        <input type="email" class="form-control" id="projectEmail" [(ngModel)]="newProject.Email" name="email">
-      </div>
-      <div class="col-md-6">
-        <label for="projectPhone" class="form-label">Phone Number</label>
-        <input type="text" class="form-control" id="projectPhone" [(ngModel)]="newProject.Phone_Number" name="phone">
-      </div>
-      <div class="col-md-6">
-        <label for="projectObjective" class="form-label">Objective</label>
-        <input type="text" class="form-control" id="projectObjective" [(ngModel)]="newProject.Objective" name="objective">
-      </div>
-      <div class="col-md-6">
-        <label for="socialNetworkURL" class="form-label">Social Network URL</label>
-        <input type="url" class="form-control" id="socialNetworkURL" [(ngModel)]="newProject.Social_Network_URL" name="socialNetworkURL">
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Add Project</button>
-      </div>
-    </form>
+    </div>
   </div>
