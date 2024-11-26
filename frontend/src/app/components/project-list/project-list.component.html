@@ -12,11 +12,42 @@
     </div>
   </section>
 
-
   <section class="about">
-    
   </section>
   <p class="title-proyectos">Proyectos</p>
+
+  <!-- Form to add new projects -->
+  <div class="container mt-5">
+    <form (ngSubmit)="addProject()" class="row g-3">
+      <div class="col-md-6">
+        <label for="projectName" class="form-label">Project Name</label>
+        <input type="text" class="form-control" id="projectName" [(ngModel)]="newProject.Name" name="name" required>
+      </div>
+      <div class="col-md-6">
+        <label for="projectDescription" class="form-label">Description</label>
+        <input type="text" class="form-control" id="projectDescription" [(ngModel)]="newProject.Description" name="description" required>
+      </div>
+      <div class="col-md-6">
+        <label for="projectAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="projectAddress" [(ngModel)]="newProject.Address" name="address">
+      </div>
+      <div class="col-md-6">
+        <label for="projectEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="projectEmail" [(ngModel)]="newProject.Email" name="email">
+      </div>
+      <div class="col-md-6">
+        <label for="projectPhone" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" id="projectPhone" [(ngModel)]="newProject.Phone_Number" name="phone">
+      </div>
+      <div class="col-md-6">
+        <label for="projectObjective" class="form-label">Objective</label>
+        <input type="text" class="form-control" id="projectObjective" [(ngModel)]="newProject.Objective" name="objective">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add Project</button>
+      </div>
+    </form>
+  </div>
 
   <div class="container mt-5">
     <div class="row">
